@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\BateauRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -36,6 +38,16 @@ class Bateau
      * @ORM\Column(type="integer")
      */
     private $vitesse;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=equipement::class, inversedBy="id_bateau")
+     */
+    private $bateau_equipement;
+
+    public function __construct()
+    {
+        $this->bateau_equipement = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -86,6 +98,30 @@ class Bateau
     public function setVitesse(int $vitesse): self
     {
         $this->vitesse = $vitesse;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|equipement[]
+     */
+    public function getBateauEquipement(): Collection
+    {
+        return $this->bateau_equipement;
+    }
+
+    public function addBateauEquipement(equipement $bateauEquipement): self
+    {
+        if (!$this->bateau_equipement->contains($bateauEquipement)) {
+            $this->bateau_equipement[] = $bateauEquipement;
+        }
+
+        return $this;
+    }
+
+    public function removeBateauEquipement(equipement $bateauEquipement): self
+    {
+        $this->bateau_equipement->removeElement($bateauEquipement);
 
         return $this;
     }
