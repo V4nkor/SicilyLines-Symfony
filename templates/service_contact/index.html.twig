@@ -3,18 +3,41 @@
 {% block title %}Hello ServiceContactController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/var/www/html/SicilyLines/src/Controller/ServiceContactController.php'|file_link(0) }}">src/Controller/ServiceContactController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/var/www/html/SicilyLines/templates/service_contact/index.html.twig'|file_link(0) }}">templates/service_contact/index.html.twig</a></code></li>
-    </ul>
-</div>
-{% endblock %}
+<center>
+    <div class="row" style="margin-top:80px;">
+        <div class="col-md-2"></div>
+        <div class="col-md-8" style="text-align:center;background:rgb(85, 186, 245);border-radius: 25px;border: 3px solid #0261a0;">
+            <h4 style="margin-top:30px"> <b> Service contact : </b> </h4>
+            <form style="margin-bottom:30px;margin-top:30px">
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Sujet :</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Sujet">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Adresse mail :</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Adresse mail">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="inputState">Type de message :</label>
+                    <select id="inputState" class="form-control">
+                    <option selected>Question</option>
+                    <option>Aide</option>
+                    <option>Suggestion</option>
+                    </select>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Message :</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary">Envoyer</button>
+            </form>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+  </center>
+  {% endblock %}
