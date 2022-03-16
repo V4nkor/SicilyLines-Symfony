@@ -27,7 +27,10 @@ paiement:
     controller: App\Controller\PaiementController::index
 contact:
     path: /contact
-    controller: App\Controller\ServiceContactController::index
+    controller: App\Controller\ServiceContactController::index/
+liaison:
+    path: /liaison
+    controller: App\Controller\LiaisonController::index/
 homepage:
     path: /
     controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction

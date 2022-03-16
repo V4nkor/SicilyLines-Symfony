@@ -3,79 +3,81 @@
 {% block title %}Recherche{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
 <center>
   <div class="row" style="margin-top:80px;">
     <div class="col-md-2"></div>
     <div class="col-md-8" style="text-align:center;background:rgb(85, 186, 245);border-radius: 25px;border: 3px solid #0261a0;">
-      <h4> <b> Recherche Traversée: </b> </h4>
-      <h5> Veuillez renseigner les informations de votre Traversée: </h5>
-      <form style="margin-bottom:30px;margin-top:30px">
-        <div class="form-group">
-          <label for="exampleInput">Liaison</label>
-          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Départ - Arrivée">
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-md-1"></div>
-          <div class="col-md-1"></div>
-            <div class="col">
-            <label for="exampleInput">Heure de départ</label>
-            <input type="number" class="form-control" placeholder="0">
+      <h4 style="margin-top:30px"> <b> Recherche Traversée : </b> </h4>
+      <h5> Veuillez renseigner les informations de votre Traversée : </h5>
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md">
+          <form action="{{ path('liaison') }}" method="post" style="margin-bottom:30px;margin-top:30px">
+            <div class="form-group">
+              <label for="exampleInput">Liaison</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Départ - Arrivée">
             </div>
-            <div class="col">
-            <label for="exampleInput">Heure d'arrivée</label>
-            <input type="number" class="form-control" placeholder="0">
+            <hr>
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-1"></div>
+                <div class="col">
+                <label for="exampleInput">Heure de départ</label>
+                <input type="number" class="form-control" placeholder="0">
+                </div>
+                <div class="col">
+                <label for="exampleInput">Heure d'arrivée</label>
+                <input type="number" class="form-control" placeholder="0">
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-1"></div>
             </div>
-            <div class="col-md-1"></div>
-            <div class="col-md-1"></div>
-        </div>
-        <hr>
-        <div class="form-group">
-          <label for="exampleInput">Date de la Traversée</label>
-          <input type="date" class="form-control" id="exampleInputDate">
-        </div>
-        <br>
-        <div class="row">
-          <div class="col-md-1"></div>
-          <div class="col-md-1"></div>
-          <div class="col-md-1"></div>
-          <div class="col-md-1"></div>
-          <div class="col">
-              <div class="formgroup">
-                  <label for="exampleInput">Nombre de Passagers</label>
-                  <input type="number" class="form-control" placeholder="0">
+            <hr>
+            <div class="form-group">
+              <label for="exampleInput">Date de la Traversée</label>
+              <input type="date" class="form-control" id="exampleInputDate">
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-1"></div>
+              <div class="col-md-1"></div>
+              <div class="col-md-1"></div>
+              <div class="col">
+                  <div class="formgroup">
+                      <label for="exampleInput">Nombre de Passagers</label>
+                      <input type="number" class="form-control" placeholder="0">
+                  </div>
               </div>
-          </div>
-          <div class="col-md-1"></div>
-          <div class="col-md-1"></div>
-          <div class="col-md-1"></div>
-          <div class="col-md-1"></div>
+              <div class="col-md-1"></div>
+              <div class="col-md-1"></div>
+              <div class="col-md-1"></div>
+              <div class="col-md-1"></div>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Type Véhicule</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                <option>Bateau</option>
+                <option>Autocar</option>
+                </select>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="exampleFormControlSelect2">Type Personne</label>
+                <select class="form-control" id="exampleFormControlSelect2">
+                <option>Senior</option>
+                <option>Adulte</option>
+                <option>Junior</option>
+                </select>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Rechercher</button>
+          </form>
         </div>
-        <br>
-        <div class="form-group">
-            <label for="exampleFormControlSelect1">Type Véhicule</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-            <option>Bateau</option>
-            <option>Autocar</option>
-            </select>
-        </div>
-        <br>
-        <div class="form-group">
-            <label for="exampleFormControlSelect2">Type Personne</label>
-            <select class="form-control" id="exampleFormControlSelect2">
-            <option>Senior</option>
-            <option>Adulte</option>
-            <option>Junior</option>
-            </select>
-        </div>
-        <br>
-        <button type="submit" class="btn btn-primary">Rechercher</button>
-      </form>
+        <div class="col-md-2"></div>
+      </div>
     </div>
     <div class="col-md-2"></div>
   </div>
