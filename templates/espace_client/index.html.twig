@@ -1,20 +1,90 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello EspaceClientController!{% endblock %}
+{% block title %}Espace client{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/var/www/html/SicilyLines/src/Controller/EspaceClientController.php'|file_link(0) }}">src/Controller/EspaceClientController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/var/www/html/SicilyLines/templates/espace_client/index.html.twig'|file_link(0) }}">templates/espace_client/index.html.twig</a></code></li>
-    </ul>
+<div class="row" style="margin-top:50px">
+    <div class="col-md" style="text-align:center;background:rgb(85, 186, 245);border-radius: 25px;border: 3px solid #0261a0;">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md">
+                <table class="table table-bordered" style="margin-top:30px;background-color:white">
+                    <thead>
+                      <tr>
+                        <td colspan="2" class="table-active">Votre compte</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td colspan="2">Adresse e-mail :</td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">Mot de passe : </td>
+                      </tr>
+                      <tr>
+                        <td>
+                            <a class="btn btn-primary" href="#" role="button" style="border-radius: 10px;border: 1px solid #4a0366;background-color:rgb(224, 221, 21)">Modifier vos informations</a>
+                        </td>
+                        <td>
+                            <i class="fa-solid fa-pen fa-2xl"></i>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                            <a class="btn btn-primary" href="#" role="button" style="border-radius: 10px;border: 1px solid #4a0366;background-color:rgb(230, 0, 0)">Suprimer votre compte</a>
+                        </td>
+                        <td>
+                            <i class="fa-solid fa-trash-can fa-2xl"></i>
+                        </td>
+                      </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-3">
+                <p>
+                    <h1>Compte {nom utilisateur}</h1>
+                    <br>
+                    <a class="btn btn-primary" href="#" role="button" style="border-radius: 10px;border: 1px solid #4a0366;background-color:rgb(107, 39, 184)">Deconnexion</a>
+                </p>
+            </div>
+            <div class="col-md-1">
+                <img src="{{ asset('images/compte.png') }}" width="150" height="150" style="margin-right:100px">
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md">
+                <h1 style="text-align: left;"><u>Reservations :</u></h1>
+                <br>
+                <table class="table table-bordered" style="background-color:white">
+                    <thead>
+                      <tr class="table-active">
+                        <td>Liaisons</td>
+                        <td>heure depart</td>
+                        <td>Date</td>
+                        <td>Nombre de personnes</td>
+                        <td>Type vehicule</td>
+                        <td>Actions</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Liaisons</td>
+                        <td>heure depart</td>
+                        <td>Date</td>
+                        <td>Nombre de personnes</td>
+                        <td>Type vehicule</td>
+                        <td>
+                            <a class="btn btn-primary" href="#" role="button" style="border-radius: 10px;border: 1px solid #4a0366;background-color:rgb(224, 221, 21)">Modifier</a>
+                            <a class="btn btn-primary" href="#" role="button" style="border-radius: 10px;border: 1px solid #4a0366;background-color:rgb(230, 0, 0)">Suprimer</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
 </div>
 {% endblock %}
