@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Confirmation Reservation{% endblock %}
+
+{% block body %}
+<div class="row" style="margin-top:50px">
+    <h4> <b> Confirmez votre réservation: </b> </h4>
+    <form style="margin-bottom:30px;margin-top:30px">
+    <div class="col-md" style="text-align:center;background:rgb(85, 186, 245);border-radius: 25px;border: 3px solid #0261a0;">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md">
+            <table class="table table-bordered" style="margin-top:30px;background-color:white">
+                <thead>
+                    <tr>
+                    <td colspan="2" class="table-active">Votre Réservation</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td colspan="2">Traversée : Paris - Luxembourg</td>
+                    </tr>
+                    <tr>
+                    <td colspan="2">Départ du Voyage : 1h25</td>
+                    </tr>
+                    <tr>
+                    <td colspan="2">Date: 15 Décembre 2021</td>
+                    </tr>
+                    <tr>
+                    <td colspan="2">Nombre de passagers 22/60</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md">
+            <div class="formgroup">
+                <label for="exampleInput">Nombre de Places</label>
+                <input type="number" class="form-control" placeholder="3">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Personne 1:</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <option>Senior</option>
+                        <option>Adulte</option>
+                        <option>Junior</option>
+                    </select>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="exampleFormControlSelect2">Personne 2:</label>
+                    <select class="form-control" id="exampleFormControlSelect2">
+                        <option>Senior</option>
+                        <option>Adulte</option>
+                        <option>Junior</option>
+                    </select>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="exampleFormControlSelect3">Personne 3:</label>
+                    <select class="form-control" id="exampleFormControlSelect3">
+                        <option>Senior</option>
+                        <option>Adulte</option>
+                        <option>Junior</option>
+                    </select>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    <button type="submit" class="btn btn-primary">Valider la réservation</button>
+    </form>
+    </div>
+</div>
+{% endblock %}

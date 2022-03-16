@@ -19,6 +19,9 @@ compte:
 reservation:
     path: /reservation
     controller: App\Controller\ReservationController::index
+confirm_reservation:
+    path: /confirm_reservation
+    controller: App\Controller\ConfirmReservationController::index
 paiement:
     path: /paiement
     controller: App\Controller\PaiementController::index
