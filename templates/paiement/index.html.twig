@@ -1,20 +1,67 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello PaiementController!{% endblock %}
+{% block title %}Paiement{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+</div><div class="row" style="margin-top:50px">
+    <h4> <b> Confirmez votre réservation: </b> </h4>
+    <form style="margin-bottom:30px;margin-top:30px">
+    <div class="col-md" style="text-align:center;background:rgb(85, 186, 245);border-radius: 25px;border: 3px solid #0261a0;">
+    <h3><b>Paiement</b> <i class="fa-solid fa-credit-card fa-2xl"></i></h3>
+    <br>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/var/www/html/SicilyLines/src/Controller/PaiementController.php'|file_link(0) }}">src/Controller/PaiementController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/var/www/html/SicilyLines/templates/paiement/index.html.twig'|file_link(0) }}">templates/paiement/index.html.twig</a></code></li>
-    </ul>
+        <div class="col-md">
+            <div class="formgroup">
+                <label for="exampleInput">Veuillez insérer vos coordonnées bancaires</label>
+                <input type="text" class="form-control" placeholder="Numéro de la carte">
+            </div>
+            <br>
+            <div class="formgroup">
+                <input type="text" class="form-control" placeholder="Titulaire de la carte">
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-1"></div>
+                <div class="col-md">
+                    <div class="formgroup">
+                        <label for="exampleInput">Mois</label>
+                        <input type="number" class="form-control" placeholder="MM">
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="formgroup">
+                        <label for="exampleInput">Année</label>
+                        <input type="number" class="form-control" placeholder="AA">
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-1"></div>
+            </div>
+            <div class="formgroup">
+                <label for="exampleInput">Cryptogramme</label>
+                <input type="password" class="form-control" placeholder="Cryptogramme">
+            </div>
+        </div>
+        <div class="col-md">
+            <br>
+            <br>
+            <br>
+            <br>
+            <h6> Prix de la reéservation: 0.00€</h6>
+            <hr>
+            <h6> Nombre de personnes: 1</h6>
+            <hr>
+            <h6> Total de la réservation: 00.00€</h6>
+            <br>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    <button type="submit" class="btn btn-primary">Confirmer</button>
+    </form>
+    </div>
 </div>
 {% endblock %}
