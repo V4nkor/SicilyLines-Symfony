@@ -1,23 +1,40 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AccueilController!{% endblock %}
+{% block title %}Accueil{% endblock %}
+
+{% block navbar %}
+</ul>
+<ul class="navbar-nav mr-auto" style="margin-left:auto;margin-right:20px">
+    <li class="nav-item">
+        <a class="btn btn-primary" href="{{ path('connexion') }}" role="button" style="border-radius: 10px;border: 4px solid #0261a0;background-color:rgb(85, 186, 245)">Connexion</a>
+    </li>
+{% endblock %}
 
 {% block body %}
 <style>
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
-
 <div class="row">
-    <div class="col-md" style="text-align:center;background:rgb(54, 164, 228);border-radius: 25px;border: 4px solid #0261a0;">
+    <div class="col-md-5"></div>
+    <div class="col-md-4">
+        <button type="button" class="btn btn-dark btn-lg" style="margin-right:auto;margin-left:auto;margin-top:60px;margin-bottom:60px;border-radius: 10px;border: 2px solid;border-color:#F5F5F5;">Rechercher une traversee <i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+    
+</div>
+<div class="row">
+    <div class="col-md" style="text-align:center;background:rgb(85, 186, 245);border-radius: 25px;border: 3px solid #0261a0;">
         <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-2"><img src="../../public/images/ancre.png"></div>
+            <div class="col-md-2"></div>
+            <div class="col-md-1"><img src="{{ asset('images/ancre.png') }}" witdh="100px" height="200px"></div>
             <div class="col-md">
-                <h1>Bienvenue sur Sicily Lines</h1>
-                Notre site nous permet de passer de bon voyages, petits et grands.<br>
-                Vous pouvez faire des reservations sur nos differentes traversees.
+                <p>
+                    <h1>Bienvenue chez Sicily Lines</h1>
+                    Notre site nous permet de passer de bon voyages, petits et grands.<br>
+                    Vous pouvez faire des reservations sur nos differentes traversees.
+                </p>
             </div>
+            <div class="col-md-2"></div>
         </div>
     </div>
 </div>

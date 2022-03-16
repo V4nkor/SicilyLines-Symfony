@@ -4,6 +4,12 @@
 accueil:
     path: /accueil
     controller: App\Controller\AccueilController::index
+connexion:
+    path: /connexion
+    controller: App\Controller\ConnexionController::index
+inscription:
+    path: /inscription
+    controller: App\Controller\inscriptionController::index
 homepage:
     path: /
     controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
