@@ -9,7 +9,22 @@ connexion:
     controller: App\Controller\ConnexionController::index
 inscription:
     path: /inscription
-    controller: App\Controller\inscriptionController::index
+    controller: App\Controller\InscriptionController::index
+recherche:
+    path: /recherche
+    controller: App\Controller\RechercheController::index
+compte:
+    path: /compte
+    controller: App\Controller\EspaceClientController::index
+reservation:
+    path: /reservation
+    controller: App\Controller\ReservationController::index
+paiement:
+    path: /paiement
+    controller: App\Controller\PaiementController::index
+contact:
+    path: /contact
+    controller: App\Controller\ServiceContactController::index
 homepage:
     path: /
     controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
