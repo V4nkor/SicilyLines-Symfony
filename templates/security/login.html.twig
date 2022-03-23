@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+<center>
+    <div class="row" style="margin-top:80px;">
+      <div class="col-md-3"></div>
+      <div class="col-md-6" style="text-align:center;background:rgb(85, 186, 245);border-radius: 25px;border: 3px solid #0261a0;">
+        <div class="row">   
+          <div class="col-md-3"></div>
+            <div class="col-md">
+              <form method="post">
+                <h1 style="margin-top:30px">Connexion :</h1>
+                {% if error %}
+                    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+
+                {% if app.user %}
+                    <div class="mb-3">
+                        Vous etes connecte en tant que {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+                    </div>
+                {% endif %}
+                <br>
+                <label for="inputUsername">Identifiant :</label>
+                <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" autocomplete="username" placeholder="Identifiant" required autofocus>
+                <br>
+                <label for="inputPassword">Mot de passe :</label>
+                <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" placeholder="Mot de passe" required>
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                <br>
+                <button class="btn btn-lg btn-primary" type="submit">
+                    Se connecter
+                </button>
+                </form>
+                <br>
+                <a href="{{ path('inscription') }}" style="margin-bottom:30px;">Pas de compte ? Inscrivez vous !</a>
+            </div>
+          <div class="col-md-3"></div>
+        </div>
+      </div> 
+      <div class="col-md-3"></div>
+    </div>
+  </center>
+    
+{% endblock %}
