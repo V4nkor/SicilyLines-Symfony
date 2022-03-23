@@ -14,3 +14,4 @@
 /.web-server-pid
 ###< symfony/web-server-bundle ###
 composer.lock
+.env
