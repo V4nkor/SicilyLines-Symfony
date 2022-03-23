@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+
+    <center>
+        <div class="row" style="margin-top:80px;">
+          <div class="col-md-3"></div>
+          <div class="col-md-6" style="text-align:center;background:rgb(85, 186, 245);border-radius: 25px;border: 3px solid #0261a0;">
+            <div class="row">   
+              <div class="col-md-2"></div>
+              <div class="col-md">
+                <h1 style="margin-top:30px">Inscription : </h1><br>
+                {{ form_start(registrationForm) }}
+                {{ form_row(registrationForm.username, {
+                    label: 'Identifiant :   '
+                }) }}<br>
+                {{ form_row(registrationForm.email, {
+                    label: 'E-mail :  '
+                }) }}<br>
+                {{ form_row(registrationForm.plainPassword, {
+                    label: 'Mot de passe :  '
+                }) }}
+                <br>
+                {{ form_row(registrationForm.agreeTerms) }}
+                <br>
+                <button type="submit" class="btn btn-lg btn-primary" >S'inscrire</button>
+                {{ form_end(registrationForm) }}
+                <br>
+                <a href="{{ path('connexion') }}" style="margin-bottom:30px;">Vous avez deja un compte ? Connectez vous !</a>
+              </div>
+              <div class="col-md-2"></div>
+            </div>
+          </div> 
+          <div class="col-md-3"></div>
+        </div>
+      </center>
+    
+{% endblock %}

@@ -14,4 +14,11 @@
 /.web-server-pid
 ###< symfony/web-server-bundle ###
 composer.lock
+<<<<<<< Updated upstream
 .env
+=======
+composer.lock
+composer.json
+symfony.lock
+>>>>>>> Stashed changes
+*.lock
