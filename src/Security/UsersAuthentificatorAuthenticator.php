@@ -77,7 +77,7 @@ class UsersAuthentificatorAuthenticator extends AbstractFormLoginAuthenticator
     {
         $password = $credentials['password'];
 
-        $user = $this->getDoctrine()->getRepository(User::class)->findOneBy(['username'=>$username]);
+        $user = $this->get('doctrine')->getRepository(User::class)->findOneBy(['username'=>$username]);
 
         if ($user === null) {
             // user not found
