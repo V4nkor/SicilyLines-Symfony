@@ -27,16 +27,16 @@ paiement:
     controller: App\Controller\PaiementController::index
 contact:
     path: /contact
-    controller: App\Controller\ServiceContactController::index/
+    controller: App\Controller\ServiceContactController::index
 liaison:
     path: /liaison
-    controller: App\Controller\LiaisonController::index/
+    controller: App\Controller\LiaisonController::index
 login:
     path: /login
-    controller: App\Controller\SecurityController::index/
+    controller: App\Controller\SecurityController::index
 register:
     path: /register
-    controller: App\Controller\RegistrationController::index/
+    controller: App\Controller\RegistrationController::index
 homepage:
     path: /
     controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
