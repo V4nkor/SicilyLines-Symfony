@@ -34,6 +34,9 @@ liaison:
 login:
     path: /login
     controller: App\Controller\SecurityController::index/
+register:
+    path: /register
+    controller: App\Controller\RegistrationController::index/
 homepage:
     path: /
     controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction

@@ -88,12 +88,6 @@
     "laminas/laminas-code": {
         "version": "4.5.0"
     },
-    "laminas/laminas-eventmanager": {
-        "version": "3.4.0"
-    },
-    "laminas/laminas-zendframework-bridge": {
-        "version": "1.4.1"
-    },
     "nikic/php-parser": {
         "version": "v4.13.1"
     },
@@ -197,6 +191,9 @@
             ".env"
         ]
     },
+    "symfony/form": {
+        "version": "v4.4.38"
+    },
     "symfony/framework-bundle": {
         "version": "4.4",
         "recipe": {
@@ -230,6 +227,9 @@
     "symfony/inflector": {
         "version": "v4.4.37"
     },
+    "symfony/intl": {
+        "version": "v4.4.38"
+    },
     "symfony/maker-bundle": {
         "version": "1.36",
         "recipe": {
@@ -241,6 +241,12 @@
     },
     "symfony/mime": {
         "version": "v4.4.34"
+    },
+    "symfony/options-resolver": {
+        "version": "v4.4.37"
+    },
+    "symfony/polyfill-intl-icu": {
+        "version": "v1.25.0"
     },
     "symfony/polyfill-intl-idn": {
         "version": "v1.23.0"
@@ -343,6 +349,19 @@
             "config/packages/test/twig.yaml",
             "config/packages/twig.yaml",
             "templates/base.html.twig"
+        ]
+    },
+    "symfony/validator": {
+        "version": "4.4",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "4.3",
+            "ref": "3eb8df139ec05414489d55b97603c5f6ca0c44cb"
+        },
+        "files": [
+            "config/packages/test/validator.yaml",
+            "config/packages/validator.yaml"
         ]
     },
     "symfony/var-dumper": {

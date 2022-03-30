@@ -33,6 +33,7 @@ class UsersAuthentificatorAuthenticator extends AbstractFormLoginAuthenticator
         $this->entityManager = $entityManager;
         $this->urlGenerator = $urlGenerator;
         $this->csrfTokenManager = $csrfTokenManager;
+
     }
 
     public function supports(Request $request)
@@ -74,6 +75,24 @@ class UsersAuthentificatorAuthenticator extends AbstractFormLoginAuthenticator
 
     public function checkCredentials($credentials, UserInterface $user)
     {
+        $password = $credentials['password'];
+
+        $user = $this->getDoctrine()->getRepository(User::class)->findOneBy(['username'=>$username]);
+
+        if ($user === null) {
+            // user not found
+            // throw exception or return error or however you handle it
+            return false;
+        }
+
+        if (! $this->encoder->isPasswordValid($user, $password)) {
+            // invalid password
+            // throw exception, or return error, or however you handle it
+            return false;
+        }
+        else{
+            return true;
+        }
         // Check the user's password or other credentials and return true or false
         // If there are no credentials to check, you can just return true
         throw new \Exception('TODO: check the credentials inside '.__FILE__);
@@ -86,7 +105,7 @@ class UsersAuthentificatorAuthenticator extends AbstractFormLoginAuthenticator
         }
 
         // For example : return new RedirectResponse($this->urlGenerator->generate('some_route'));
-        throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
+        return new RedirectResponse($this->urlGenerator->generate('compte'));
     }
 
     protected function getLoginUrl()
