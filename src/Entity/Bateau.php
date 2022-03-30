@@ -44,9 +44,15 @@ class Bateau
      */
     private $bateau_equipement;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Traversee::class, mappedBy="traversee_bateau")
+     */
+    private $bateau_traversee;
+
     public function __construct()
     {
         $this->bateau_equipement = new ArrayCollection();
+        $this->bateau_traversee = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -122,6 +128,36 @@ class Bateau
     public function removeBateauEquipement(equipement $bateauEquipement): self
     {
         $this->bateau_equipement->removeElement($bateauEquipement);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Traversee>
+     */
+    public function getBateauTraversee(): Collection
+    {
+        return $this->bateau_traversee;
+    }
+
+    public function addBateauTraversee(Traversee $bateauTraversee): self
+    {
+        if (!$this->bateau_traversee->contains($bateauTraversee)) {
+            $this->bateau_traversee[] = $bateauTraversee;
+            $bateauTraversee->setTraverseeBateau($this);
+        }
+
+        return $this;
+    }
+
+    public function removeBateauTraversee(Traversee $bateauTraversee): self
+    {
+        if ($this->bateau_traversee->removeElement($bateauTraversee)) {
+            // set the owning side to null (unless already changed)
+            if ($bateauTraversee->getTraverseeBateau() === $this) {
+                $bateauTraversee->setTraverseeBateau(null);
+            }
+        }
 
         return $this;
     }

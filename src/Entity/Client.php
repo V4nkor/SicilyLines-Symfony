@@ -37,6 +37,11 @@ class Client
      */
     private $ville;
 
+    /**
+     * @ORM\OneToOne(targetEntity=reservation::class, inversedBy="reservation_client", cascade={"persist", "remove"})
+     */
+    private $client_reservation;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +91,18 @@ class Client
     public function setVille(string $ville): self
     {
         $this->ville = $ville;
+
+        return $this;
+    }
+
+    public function getClientReservation(): ?reservation
+    {
+        return $this->client_reservation;
+    }
+
+    public function setClientReservation(?reservation $client_reservation): self
+    {
+        $this->client_reservation = $client_reservation;
 
         return $this;
     }
